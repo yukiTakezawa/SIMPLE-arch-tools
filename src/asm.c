@@ -201,6 +201,8 @@ void assemble()
             int rs;
             read_reg(&rs);
             put23344(3, rs, 0, 13, 0);
+        }else if(streql(op, "STL")) {
+            put2338(2, 1, 0, 0);
         }
         else {
             assert(0);

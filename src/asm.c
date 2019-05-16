@@ -139,7 +139,8 @@ void assemble()
         else if (streql(op, "CMPI")) {
             int rd, d;
             read_reg_imm(&rd, &d);
-            put23344(3, 0, rd, 14, d);
+            //put23344(3, 0, rd, 14, d);
+            put2338(2, 3, rd,d);
         }
         else if (streql(op, "LD")) {
             int ra, rb, d;
@@ -201,10 +202,9 @@ void assemble()
             int rs;
             read_reg(&rs);
             put23344(3, rs, 0, 13, 0);
-        }else if(streql(op, "STL")) {
+        }else if (streql(op, "STL")) {
             put2338(2, 1, 0, 0);
-        }
-        else {
+        }else {
             assert(0);
         }
     }

@@ -114,7 +114,8 @@ void assemble()
         else if (streql(op, "ADDI")) {
             int rd, d;
             read_reg_imm(&rd, &d);
-            put23344(3, 0, rd, 7, d);
+            //put23344(3, 0, rd, 7, d);
+            put2338(2, 2, rd, d);
         }
         else if (streql(op, "SLL")) {
             int rd, d;
